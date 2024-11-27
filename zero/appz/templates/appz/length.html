@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Length Converter - ToolSphere</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="{% static 'appz/css/length.css' %}" />  
+
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Length Converter</h1>
+        
+        {% if user.is_authenticated %}
+        <a href="{% url 'home' %}" class="back-link">← Back to Tools</a>
+    {% else %}
+        <a href="{% url 'user_login' %}" class="back-link">← Login to Access Tools</a>
+    {% endif %}
+      </header>
+
+      <div class="converter-card">
+        <div class="input-group">
+          <label>From</label>
+          <div class="input-with-unit">
+            <input type="number" placeholder="Enter value" />
+            <select>
+              <option value="m">Meters</option>
+              <option value="km">Kilometers</option>
+              <option value="cm">Centimeters</option>
+              <option value="mm">Millimeters</option>
+              <option value="mi">Miles</option>
+              <option value="yd">Yards</option>
+              <option value="ft">Feet</option>
+              <option value="in">Inches</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="swap-btn">↑↓</button>
+
+        <div class="input-group">
+          <label>To</label>
+          <div class="input-with-unit">
+            <input type="number" placeholder="Result" readonly />
+            <select>
+              <option value="km">Kilometers</option>
+              <option value="m">Meters</option>
+              <option value="cm">Centimeters</option>
+              <option value="mm">Millimeters</option>
+              <option value="mi">Miles</option>
+              <option value="yd">Yards</option>
+              <option value="ft">Feet</option>
+              <option value="in">Inches</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="convert-btn">Convert</button>
+      </div>
+    </div>
+    <script src="{% static 'appz/js/length.js' %}"></script>
+  </body>
+</html>

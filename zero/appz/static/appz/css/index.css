@@ -1,0 +1,129 @@
+:root {
+  --primary-color: #00ff9d;
+  --bg-color: #1a1a1a;
+  --card-bg: #2a2a2a;
+  --text-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+header h2 {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+button {
+  border: none;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 50%;
+  background: #2c302c; /* Button background */
+  color: #ffffff;
+  font-size: 20px;
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 8px 8px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for button depth */
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+.logout-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #00ff9d; /* Button color */
+  color: #000000;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #ff9b3e; /* Hover color */
+}
+
+/* Tool Cards */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.tool-card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.tool-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.tool-card:hover {
+  background-color: var(--primary-color);
+}
+
+/* Trivia Navigation */
+.trivia-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.trivia-nav button {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  color: var(--bg-color);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.trivia-nav button:hover {
+  background-color: #00cc7a;
+}

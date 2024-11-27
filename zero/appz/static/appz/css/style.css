@@ -1,0 +1,165 @@
+:root {
+    --primary-color: #00ff9d;
+    --secondary-color: #007bff;
+    --bg-color: #1a1a1a;
+    --card-bg: #2a2a2a;
+    --text-color: #ffffff;
+    --gradient-start: #00ff9d;
+    --gradient-end: #0056b3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 400px;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    color: var(--bg-color);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #00cc7d;
+    transform: translateY(-3px);
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #1a1a1a;
+    color: var(--text-color);
+}
+
+form input:focus {
+    outline: none;
+    border-color: #00cc7d;
+}
+
+.message {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.message.success {
+    color: #28a745;
+}
+
+.message.error {
+    color: #ff4c4c;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary-color);
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+.landing-container {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: var(--text-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.landing-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.landing-container p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.landing-container .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.landing-container .buttons a {
+    padding: 10px 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.landing-container .buttons a:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .landing-container {
+        padding: 20px;
+    }
+
+    .landing-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .landing-container p {
+        font-size: 1rem;
+    }
+}

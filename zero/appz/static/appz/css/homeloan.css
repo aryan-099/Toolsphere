@@ -1,0 +1,165 @@
+:root {
+    --primary-color: #00ff9d;
+    --bg-color: #1a1a1a;
+    --card-bg: #2a2a2a;
+    --text-color: #ffffff;
+    --shadow-color: rgba(0, 255, 157, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 500px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    position: relative; /* Required for positioning the line */
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    position: relative; /* Ensures text and line are distinct */
+}
+
+header::after {
+    content: "";
+    display: block;
+    width: 100%; /* Extends the line across the container */
+    height: 2px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0; /* Aligns line to the bottom of the header */
+    left: 0; /* Ensures the line starts from the left of the container */
+}
+
+.back-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #00cc7d;
+}
+
+.calculator-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.input-with-unit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-with-unit input {
+    flex: 1;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: var(--text-color);
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.input-with-unit span {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.calculate-btn {
+    width: 100%;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calculate-btn:hover {
+    background: #00cc7d;
+}
+
+.result-group {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #1a1a1a;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.result-group h3, 
+.result-group h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.result-group span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .calculator-card {
+        padding: 1.5rem;
+    }
+
+    .input-group label {
+        font-size: 0.9rem;
+    }
+
+    .calculate-btn {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home Loan Calculator - ToolSphere</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="{% static 'appz/css/homeloan.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Home Loan Calculator</h1>
+        
+        {% if user.is_authenticated %}
+        <a href="{% url 'home' %}" class="back-link">← Back to Tools</a>
+    {% else %}
+        <a href="{% url 'user_login' %}" class="back-link">← Login to Access Tools</a>
+    {% endif %}
+      </header>
+
+      <div class="calculator-card">
+        <div class="input-group">
+          <label for="loan-amount">Loan Amount</label>
+          <div class="input-with-unit">
+            <input type="number" id="loan-amount" placeholder="Enter loan amount" />
+            <span class="currency">₹</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="interest-rate">Annual Interest Rate (%)</label>
+          <div class="input-with-unit">
+            <input type="number" id="interest-rate" placeholder="Enter interest rate" />
+            <span>%</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="loan-term">Loan Term (Years)</label>
+          <div class="input-with-unit">
+            <input type="number" id="loan-term" placeholder="Enter loan term" />
+            <span>Years</span>
+          </div>
+        </div>
+
+        <button class="calculate-btn">Calculate</button>
+
+        <div class="result-group">
+          <h3>Monthly EMI: ₹<span id="emi-result">0</span></h3>
+          <h4>Total Payment: ₹<span id="total-payment-result">0</span></h4>
+          <h4>Total Interest: ₹<span id="total-interest-result">0</span></h4>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'appz/js/homeloan.js' %}"></script>
+  </body>
+</html>

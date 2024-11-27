@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Numeral System Converter - ToolSphere</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="{% static 'appz/css/numeral.css' %}" />
+
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Numeral System Converter</h1>
+        {% if user.is_authenticated %}
+            <a href="{% url 'home' %}" class="back-link">← Back to Tools</a>
+        {% else %}
+            <a href="{% url 'user_login' %}" class="back-link">← Login to Access Tools</a>
+        {% endif %}
+      </header>
+
+      <div class="converter-card">
+        <div class="input-group">
+          <label>From</label>
+          <div class="input-with-unit">
+            <input type="text" placeholder="Enter number" />
+            <select>
+              <option value="10">Decimal (Base-10)</option>
+              <option value="2">Binary (Base-2)</option>
+              <option value="8">Octal (Base-8)</option>
+              <option value="16">Hexadecimal (Base-16)</option>
+              <option value="32">Base-32</option>
+              <option value="64">Base-64</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="swap-btn">↑↓</button>
+
+        <div class="input-group">
+          <label>To</label>
+          <div class="input-with-unit">
+            <input type="text" placeholder="Result" readonly />
+            <select>
+              <option value="2">Binary (Base-2)</option>
+              <option value="10">Decimal (Base-10)</option>
+              <option value="8">Octal (Base-8)</option>
+              <option value="16">Hexadecimal (Base-16)</option>
+              <option value="32">Base-32</option>
+              <option value="64">Base-64</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="convert-btn">Convert</button>
+      </div>
+    </div>
+    <script src="{% static 'appz/js/numeral.js' %}"></script>
+  </body>
+</html>

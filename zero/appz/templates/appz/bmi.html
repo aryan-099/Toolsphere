@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BMI Calculator - ToolSphere</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'appz/css/bmi.css' %}" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BMI Calculator</h1>
+        
+            {% if user.is_authenticated %}
+                <a href="{% url 'home' %}" class="back-link">← Back to Tools</a>
+            {% else %}
+                <a href="{% url 'user_login' %}" class="back-link">← Login to Access Tools</a>
+            {% endif %}
+
+        </header>
+        
+        <div class="converter-card">
+            <div class="input-group">
+                <label for="height">Height</label>
+                <div class="input-with-unit">
+                    <input type="number" id="height" placeholder="Enter height" />
+                    <select id="height-unit">
+                        <option value="cm">cm</option>
+                        <option value="ft">ft</option>
+                        <option value="m">m</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="weight">Weight</label>
+                <div class="input-with-unit">
+                    <input type="number" id="weight" placeholder="Enter weight" />
+                    <select id="weight-unit">
+                        <option value="kg">kg</option>
+                        <option value="lbs">lbs</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="convert-btn" onclick="calculateBMI()">Calculate BMI</button>
+            
+            <div class="result">
+                <span class="result-label">Your BMI:</span>
+                <span class="result-value" id="bmiResult">0.0</span>
+            </div>
+            
+            <div class="bmi-scale">
+                <div class="scale-item">
+                    <span class="scale-label">Underweight</span>
+                    <span class="scale-value">&lt; 18.5</span>
+                </div>
+                <div class="scale-item">
+                    <span class="scale-label">Normal</span>
+                    <span class="scale-value">18.5 - 24.9</span>
+                </div>
+                <div class="scale-item">
+                    <span class="scale-label">Overweight</span>
+                    <span class="scale-value">25 - 29.9</span>
+                </div>
+                <div class="scale-item">
+                    <span class="scale-label">Obese</span>
+                    <span class="scale-value">&gt; 30</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{% static 'appz/js/bmi.js' %}"></script>
+</body>
+</html>

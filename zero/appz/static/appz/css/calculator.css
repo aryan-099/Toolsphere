@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #0a0a0a, #000000); /* Dark gradient background */
+}
+
+.calculator {
+    border: 1px solid #717377;
+    padding: 20px;
+    border-radius: 16px;
+    background: transparent;
+    box-shadow: 0px 3px 15px #00ff9d;
+}
+
+input {
+    width: 320px;
+    border: none;
+    padding: 24px;
+    margin: 10px;
+    background: rgba(84, 84, 84, 0.1);
+    box-shadow: 0px 3px 15px rgba(84, 84, 84, 0.1);
+    font-size: 40px;
+    text-align: right;
+    color: #ffffff;
+    cursor: default;
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+button {
+    border: none;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 50%;
+    background: #2c302c; /* Button background */
+    color: #ffffff;
+    font-size: 20px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 8px 8px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for button depth */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #00ff9d; /* Button color */
+    color: #000000;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background-color: #ff9b3e; /* Hover color */
+}
+
+.heading {
+    color: #00ff9d; /* Heading text color */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space between heading and calculator */
+    font-size: 28px; /* Adjust font size as needed */
+    font-weight: 300;
+}
+
+button:hover {
+    background: #44484d; /* Slightly lighter background on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Shrink button slightly on click */
+}
+
+.operator {
+    color: #00ff9d; /* Green color for operator buttons */
+}
+
+.equalBtn {
+    background-color: #44484d; /* Orange color for equals button */
+    color: #00ff9d;
+}
+
+button.operator:hover {
+    background: #3a3e42; /* Hover effect for operators */
+}
+
+button.equalBtn:hover {
+    background-color: #ff9b3e; /* Hover effect for equals button */
+}
